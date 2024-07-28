@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import ErrorPage from './pages/ErrorPage.tsx';
 import PhotoCarousel from './pages/PhotoCarousel.tsx';
+import PhotoSplideSlider from './pages/PhotoSplideSlider.tsx';
 
 
 import {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     element: <App></App>,
     errorElement:<ErrorPage></ErrorPage>,
     children:[
-      {path:"photoscarousel",element:<div>Hey</div>},
+      {path:"photocarousel",element:<PhotoSplideSlider></PhotoSplideSlider>, loader:photoLoader},
       {path:"photos",element:<PhotoCarousel></PhotoCarousel>, loader:photoLoader}
       
     ]

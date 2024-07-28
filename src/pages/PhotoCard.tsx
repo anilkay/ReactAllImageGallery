@@ -17,7 +17,7 @@ const PhotoCard: React.FC<Photo> = ({ src, data }) => {
 
     return (
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
-        <img src={src} alt={promptData.prompt} className="w-full h-48 object-cover" />
+        <img src={src} alt={promptData.prompt} className="w-full h-48 object-contain" />
         <div className="p-4">
           <h2 className="text-lg font-bold mb-2">{promptData.prompt}</h2>
           <p className="text-gray-700">{promptData.prompt}</p>
