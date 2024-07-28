@@ -1,4 +1,4 @@
-import { useRouteError } from "react-router-dom";
+import { useRouteError,useNavigate } from "react-router-dom";
 
 interface ErrorWithMessage {
     message: string;
@@ -8,6 +8,7 @@ interface ErrorWithMessage {
 
 export default function ErrorPage() {
   const error = useRouteError();
+  const navigate=useNavigate()
 
   const errorWithMessage= error as ErrorWithMessage
 
@@ -19,6 +20,12 @@ export default function ErrorPage() {
         <p className="text-gray-500">
           <i>{errorWithMessage.statusText || errorWithMessage.message}</i>
         </p>
+        <button
+          onClick={() => navigate('/')}
+          className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+        >
+          Back to Home
+        </button>
       </div>
     </div>
   );
