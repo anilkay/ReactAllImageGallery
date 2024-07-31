@@ -1,6 +1,16 @@
+import Alert from "../components/AlertComponent"
 import useStack from "../hooks/useStack"
-import {useRef} from "react"
+import {useRef, useState} from "react"
+
 const StackPage= ()=> {
+   
+   const [showAlert,setShowAlert]=useState(false)
+   const [message,setMessage]=useState("")
+
+   const onClose= ()=>{
+    setShowAlert(false)
+   }
+
    const {push,pop}= useStack<string>()
 
    const inputRef=useRef<HTMLInputElement>(null)
@@ -12,19 +22,26 @@ const StackPage= ()=> {
 
    }
 
+   const prepareAlert=(message:string)=>{
+      setShowAlert(true)
+      setMessage(message)
+   }
+
    const popValue= ()=> {
     const poppedValue=pop()
     if(poppedValue){
-        alert(poppedValue)
+      prepareAlert("Popped: "+poppedValue)
     }
 
     else {
-        alert("No more element left in Stack")
+      prepareAlert("No more element left in Stack")
     }
 
    }
 
    return (
+    <>
+    {showAlert && <Alert message={message} onClose={onClose} ></Alert>}
     <div className="flex flex-col items-center justify-center min-h-screen">
       <input
         ref={inputRef}
@@ -47,8 +64,9 @@ const StackPage= ()=> {
         </button>
       </div>
     </div>
+    </>
   );
-
+  
 }
 
 export default StackPage
