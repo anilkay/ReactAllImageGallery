@@ -12,6 +12,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { photoLoader } from './loaders/photoLoader.ts';
+import StackPage from './pages/StackPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
     children:[
       {path:"photocarousel",element:<PhotoSplideSlider></PhotoSplideSlider>, loader:photoLoader},
       {path:"photos",element:<PhotoCarousel></PhotoCarousel>, loader:photoLoader},
-      {path:"battery",element:<BatteryPage></BatteryPage>}
+      {path:"battery",element:<BatteryPage></BatteryPage>},
+      {path:"stackpage",element:<StackPage></StackPage>}
       
     ]
   },
