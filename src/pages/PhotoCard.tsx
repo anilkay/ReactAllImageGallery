@@ -3,10 +3,10 @@ import {Photo} from './PhotoCarousel'
 
 
 interface PhotoData {
- prompt:string
+ prompt:string,
 }
   
-const PhotoCard: React.FC<Photo> = ({ src, data }) => {
+const PhotoCard: React.FC<Photo> = ({ src, data,className=""}) => {
     const [promptData,setPromptData]=useState<PhotoData>({prompt:""})
     useEffect(()=>{
         fetch(data).then(async(res)=>{
@@ -16,7 +16,7 @@ const PhotoCard: React.FC<Photo> = ({ src, data }) => {
 
 
     return (
-      <div className="bg-white shadow-md rounded-lg overflow-hidden">
+      <div className={"bg-white shadow-md rounded-lg overflow-hidden "+className}>
         <img src={src} alt={promptData.prompt} className="w-full h-48 object-contain" />
         <div className="p-4">
           <h2 className="text-lg font-bold mb-2">{promptData.prompt}</h2>

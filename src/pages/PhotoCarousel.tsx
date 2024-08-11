@@ -6,6 +6,7 @@ import { useLoaderData } from 'react-router-dom';
 export interface Photo {
     src: string;
     data: string;
+    className?:string
   }
   
  
