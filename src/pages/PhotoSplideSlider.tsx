@@ -2,7 +2,7 @@ import React from 'react';
 import PhotoCard from './PhotoCard';
 import { useLoaderData } from 'react-router-dom';
 import {Photo} from "./PhotoCarousel"
-
+// @ts-expect-error needs library update.
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css';
