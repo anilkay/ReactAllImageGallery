@@ -1,7 +1,11 @@
 import { useBattery } from "@uidotdev/usehooks";
 import Battery from "../components/Battery";
+import { useDocumentTitle } from "@uidotdev/usehooks";
 
 const BatteryPage= ()=> {
+    
+    useDocumentTitle("Battery Page")
+
     const {loading, supported,level,charging,chargingTime,dischargingTime } = useBattery()
 
     if(!supported){

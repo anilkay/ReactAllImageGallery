@@ -1,8 +1,11 @@
 import Alert from "../components/AlertComponent"
 import useStack from "../hooks/useStack"
 import {useRef, useState} from "react"
+import { useDocumentTitle } from "@uidotdev/usehooks";
 
 const StackPage= ()=> {
+
+   useDocumentTitle("Stack Page")
    
    const [showAlert,setShowAlert]=useState(false)
    const [message,setMessage]=useState("")

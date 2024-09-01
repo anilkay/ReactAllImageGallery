@@ -1,6 +1,7 @@
 import React from 'react';
 import PhotoCard from './PhotoCard';
 import { useLoaderData } from 'react-router-dom';
+import { useDocumentTitle } from "@uidotdev/usehooks";
 
 
 export interface Photo {
@@ -12,6 +13,8 @@ export interface Photo {
  
   
   const PhotoCarousel: React.FC = () => {
+    
+    useDocumentTitle("Photo Carousel")
 
     const { photos } = useLoaderData() as { photos: Photo[] };
 

@@ -1,5 +1,5 @@
 import { useRouteError,useNavigate } from "react-router-dom";
-
+import { useDocumentTitle } from "@uidotdev/usehooks";
 interface ErrorWithMessage {
     message: string;
     statusText?: string;
@@ -9,6 +9,8 @@ interface ErrorWithMessage {
 export default function ErrorPage() {
   const error = useRouteError();
   const navigate=useNavigate()
+
+  useDocumentTitle("Error Page")
 
   const errorWithMessage= error as ErrorWithMessage
 
