@@ -53,6 +53,19 @@ const useScreenRecording = () => {
         }
     }
 
+    const stopSharing=()=>{
+            if(!mediaStreamRef.current){
+                return;
+            }
+            const allTracks=mediaStreamRef.current.getTracks()
+          
+            allTracks.forEach((track) => {
+                track.stop();
+              });
+
+            mediaStreamRef.current=null;
+    }
+
     const downloadRecording= ()=>{
         const blob=new Blob(mediaStreamChunks.current,{type:mediaRecorderRef.current?.mimeType})
         const videoUrl=window.URL.createObjectURL(blob)
@@ -65,9 +78,13 @@ const useScreenRecording = () => {
         a.click(); // İndirme başlat
         URL.revokeObjectURL(videoUrl); // URL'yi serbest bırak
         mediaStreamChunks.current=[]
-      
+
+        stopSharing()
+
         
     }
+        
+    
 
     return {
         isRecording,
