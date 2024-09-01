@@ -12,6 +12,18 @@ const  Sidebar= ()=>
             <li className="mb-2">
               <Link to="/photos" className="block p-2 hover:bg-gray-700">Photos</Link>
             </li>
+            <li className="mb-2">
+              <Link to="/battery" className="block p-2 hover:bg-gray-700">Battery Info</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/stackpage" className="block p-2 hover:bg-gray-700">Stack Page</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/photogrid" className="block p-2 hover:bg-gray-700">Photo Grid</Link>
+            </li>
+            <li className="mb-2">
+              <Link to="/screenrecorder" className="block p-2 hover:bg-gray-700">Screen Recorder</Link>
+            </li>
           </ul>
         </div>
       );
