@@ -7,6 +7,7 @@ import PhotoSplideSlider from './pages/PhotoSplideSlider.tsx';
 import BatteryPage from './pages/BatteryPage.tsx';
 import PhotoGrid from './pages/PhotoGrid.tsx';
 import ScreenRecorderPage from './pages/ScreenRecorderPage.tsx';
+import SensorData from './pages/SensorData.tsx';
 
 
 import {
@@ -27,7 +28,8 @@ const router = createBrowserRouter([
       {path:"battery",element:<BatteryPage></BatteryPage>},
       {path:"stackpage",element:<StackPage></StackPage>},
       {path:"photogrid",element:<PhotoGrid></PhotoGrid>,loader:photoLoader},
-      {path:"screenrecorder",element:<ScreenRecorderPage></ScreenRecorderPage>}
+      {path:"screenrecorder",element:<ScreenRecorderPage></ScreenRecorderPage>},
+      {path:"sensordata",element:<SensorData></SensorData>}
     ]
   },
 ]);
