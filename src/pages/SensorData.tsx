@@ -22,8 +22,8 @@ const SensorTable: React.FC<{ data: SensorTableData[] }> = ({ data }) => {
           </thead>
           <tbody className="text-gray-600 text-sm font-light">
             {data.length > 0 ? (
-              data.map((sensor, index) => (
-                <tr key={index} className="border-b border-gray-200 hover:bg-gray-100">
+              data.map((sensor) => (
+                <tr key={sensor.sensorId+" "+sensor.receivedSensorDate} className="border-b border-gray-200 hover:bg-gray-100">
                   <td className="py-3 px-6 text-left border border-gray-300">{sensor.sensorId}</td>
                   <td className="py-3 px-6 text-left border border-gray-300">{sensor.sensorName}</td>
                   <td className="py-3 px-6 text-left border border-gray-300">{sensor.sensorData}</td>
