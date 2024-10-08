@@ -20,7 +20,7 @@ export default function ErrorPage() {
         <h1 className="text-4xl font-bold text-red-600 mb-4">Oops!</h1>
         <p className="text-lg text-gray-700 mb-4">Sorry, an unexpected error has occurred.</p>
         <p className="text-gray-500">
-          <i>{errorWithMessage.statusText || errorWithMessage.message}</i>
+          <i>{errorWithMessage.statusText ?? errorWithMessage.message}</i>
         </p>
         <button
           onClick={() => navigate('/')}

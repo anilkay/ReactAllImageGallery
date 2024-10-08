@@ -19,7 +19,7 @@ const StackPage= ()=> {
    const inputRef=useRef<HTMLInputElement>(null)
 
    const pushValue= ()=>{
-     if(inputRef.current && inputRef.current.value){
+     if(inputRef.current?.value){
         push(inputRef.current.value)
      }
 

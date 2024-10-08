@@ -17,7 +17,7 @@ const PhotoSplideSlider: React.FC = () => {
     options={ { perPage:1,rewind: true } } aria-label="Photos">
       {
         photos.map(photo=>{
-           return <SplideSlide>
+           return <SplideSlide key={photo.src}>
                  <PhotoCard
             key={photo.src}
             src={photo.src}

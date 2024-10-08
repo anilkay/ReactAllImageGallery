@@ -1,6 +1,5 @@
-import { useBattery } from "@uidotdev/usehooks";
+import { useBattery, useDocumentTitle } from "@uidotdev/usehooks";
 import Battery from "../components/Battery";
-import { useDocumentTitle } from "@uidotdev/usehooks";
 
 const BatteryPage= ()=> {
     

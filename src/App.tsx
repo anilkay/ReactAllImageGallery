@@ -6,8 +6,7 @@ import { Outlet } from "react-router-dom";
 const App= ()=> {
 
 
-  return (
-    <>
+  return ( 
      <div className="flex h-screen">
        <Sidebar /> 
       
@@ -16,7 +15,6 @@ const App= ()=> {
         <Outlet></Outlet>
       </div>
     </div>
-    </>
   )
 }
 
